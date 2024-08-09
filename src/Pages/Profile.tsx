@@ -1,11 +1,26 @@
-// src/components/Profile.tsx
-import { motion } from 'framer-motion';
-import Button from '../Components/FramerMotio/Button';
+import { motion, AnimatePresence } from 'framer-motion';
+import Modal from '../Components/Modal';
+import { useState } from 'react';
 
 const Profile = () => {
-  return (
-   <Button/>
-  );
+    const [showModal, setShowModal] = useState(true);
+const handle = ()=>{
+//  e.stopPropogation()
+setShowModal(false)
+console.log("hello")
 }
+    return (
+        <>
+            <button onClick={() => setShowModal(!showModal)}>click</button>
+            {/* <AnimatePresence initial={false} onExitComplete={()=>null} mode={'wait'}>
+                {showModal && (
+                    <Modal text={"showModal"} handleClose={handle}>
+                    
+                    </Modal>
+                )}
+            </AnimatePresence> */}
+        </>
+    );
+};
 
 export default Profile;

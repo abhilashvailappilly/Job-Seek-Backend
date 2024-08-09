@@ -11,6 +11,7 @@ const authSlice = createSlice({
     initialState,
     reducers: {
         setCredentials: (state, action) => {
+            console.log("dispatched worked :",action.payload)
             state.userInfo = action.payload
             localStorage.setItem('userInfo', JSON.stringify(action.payload))
             Cookies.set('userInfo', JSON.stringify(action.payload), { expires: 7, secure: true, sameSite: 'Strict' })

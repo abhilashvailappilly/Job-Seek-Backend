@@ -1,6 +1,7 @@
 export interface AuthInterface {
-    _id:string
+    uid:string
     name:string
     email:string
+    profilePicture:string
     
 }
